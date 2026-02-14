@@ -1,0 +1,47 @@
+import numpy as np 
+import time
+print("==NumPy Numerical Computing Demo ===\n")
+
+arr_1d = np.array([1,2,3,4,5])
+arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+arr_3d = np.array([
+    [[1, 2], [3, 4]],
+    [[5, 6], [7, 8]]
+])
+print("1D Array:", arr_1d)
+print("2D Array:\n", arr_2d)
+print("3D Array:\n", arr_3d)
+print("-" * 40)
+print("Addition:", arr_1d + 10)
+print("Multiplication:", arr_1d * 2)
+print("Square Root:", np.sqrt(arr_1d))
+print("-" * 40)
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+vector = np.array([10, 20, 30])
+print("Broadcasting Result:\n", matrix + vector)
+data = np.array([10, 20, 30, 40, 50])
+print("Mean:", np.mean(data))
+print("Median:",np.median(data))
+print("Standard Deviation:", np.std(data))
+print("Variance:", np.var(data))
+print("-" * 40)
+size = 1_000_000
+list_data = list(range(size))
+np_data = np.arange(size)
+start = time.time()
+sum(list_data)
+print("Python List Time:", time.time() - start)
+start = time.time()
+np.sum(np_data)
+print("NumPy Array Time:", time.time() - start)
+random_array = np.random.rand(3, 3)
+print("Random Array:\n", random_array)
+a = np.arange(1_000_000)
+b = np.arange(1_000_000)
+start = time.time()
+c = a + b
+print("Optimized NumPy Calculation Time:", time.time() - start)
+print("Array Shape:", arr_3d.shape)
+print("Array Dimensions:", arr_3d.ndim)
+print("Array Size:", arr_3d.size)
+print("\n=== Task 16 Completed Successfully ===")
